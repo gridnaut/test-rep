@@ -109,12 +109,14 @@ services:
       - "9001:9001"
 
   metabase:
-    build:
-      context: .
-      dockerfile: venv1/metabase/Dockerfile
+    image: metabase/metabase:latest
     container_name: metabase
     ports:
       - "3000:3000"
+    volumes:
+      - ./plugins:/plugins
+    environment:
+      MB_PLUGINS_DIR: /plugins
 
   postgres:
     image: postgres:13
