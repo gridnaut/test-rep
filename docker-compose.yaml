@@ -111,7 +111,7 @@ services:
   metabase:
     build:
       context: .
-      dockerfile: ./metabase/Dockerfile
+      dockerfile: venv1/metabase/Dockerfile
     container_name: metabase
     ports:
       - "3000:3000"
